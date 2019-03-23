@@ -21,45 +21,36 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/robot-dev.png')
-                  : require('../assets/images/robot-prod.png')
-              }
-              style={styles.welcomeImage}
-            />
+          
+
+          <View style={styles.mapSection}>
+
+          <Text style={styles.storeSection}>
+          <Image style={styles.storeIcon}source={require('../assets/images/sword.png')}/>
+          weapons shop
+          </Text>
+
+
+          <Text style={styles.storeSection}>
+          Recruit heros
+          </Text>
+
+          <Text style={styles.storeSection}>
+          Buy items
+          </Text>
           </View>
+
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
 
-            <Text style={styles.getStartedText}>Get started by opening</Text>
 
-            <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-               your app will automatically reload. (new text)
-            </Text>
           </View>
 
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-            </TouchableOpacity>
-          </View>
+
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
-          </View>
-        </View>
       </View>
     );
   }
@@ -74,15 +65,10 @@ export default class HomeScreen extends React.Component {
 
       return (
         <Text style={styles.developmentModeText}>
-          Development mode is enabled, your app will be slower but you can use useful development
-          tools. {learnMoreButton}
+          Development mode is enabled {learnMoreButton}
         </Text>
-      );
-    } else {
-      return (
-        <Text style={styles.developmentModeText}>
-          You are not in development mode, your app will run at full speed.
-        </Text>
+
+
       );
     }
   }
@@ -100,8 +86,27 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+
     backgroundColor: '#fff',
+
+  },
+  mapSection: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 1,
+
+  },
+  storeIcon:{
+    margin:3,
+  },
+
+  storeSection:{
+    width: 80,
+    height: 100,
+    backgroundColor: '#D4D4D4',
+    margin: 10,
+    borderRadius: 5,
+
   },
   developmentModeText: {
     marginBottom: 20,
