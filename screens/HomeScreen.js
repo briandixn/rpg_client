@@ -27,7 +27,7 @@ export default class HomeScreen extends React.Component {
 
           <Text style={styles.storeSection}>
           <Image style={styles.storeIcon}source={require('../assets/images/sword.png')}/>
-          weapons shop
+          weapons shop!!!
           </Text>
 
 
