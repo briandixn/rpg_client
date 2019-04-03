@@ -7,21 +7,28 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Button,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
+
+import SpriteSheet from 'rn-sprite-sheet';
+import { Battlesprite } from '../components/battleSprite';
+
+
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
+
   render() {
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-          
+
 
           <View style={styles.mapSection}>
 
@@ -43,14 +50,11 @@ export default class HomeScreen extends React.Component {
 
           <View style={styles.getStartedContainer}>
             {this._maybeRenderDevelopmentModeWarning()}
-
-
           </View>
 
+        
 
         </ScrollView>
-
-
       </View>
     );
   }
@@ -83,6 +87,7 @@ export default class HomeScreen extends React.Component {
     );
   };
 }
+
 
 const styles = StyleSheet.create({
   container: {
