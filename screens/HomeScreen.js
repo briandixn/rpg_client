@@ -37,97 +37,60 @@ export default class HomeScreen extends React.Component {
           weapons shop
           </Text>
 
+          <TouchableOpacity activeOpacity = { .5 } onPress={ this.callFun }>
 
-          <Text style={styles.storeSection}>
-          Recruit heros
-          </Text>
+          <Image source={require('../assets/images/p_button.png')}>
+
+          </Image>
+          <Text>Recruit heros</Text>
+
+        </TouchableOpacity>
 
           <Text style={styles.storeSection}>
           Buy items
           </Text>
+
+          <Text style={styles.storeSection}>
+          Organize Heros
+          </Text>
           </View>
 
 
-          <View style={styles.getStartedContainer}>
-            {this._maybeRenderDevelopmentModeWarning()}
-          </View>
 
-        
 
         </ScrollView>
       </View>
     );
   }
-
-  _maybeRenderDevelopmentModeWarning() {
-    if (__DEV__) {
-      const learnMoreButton = (
-        <Text onPress={this._handleLearnMorePress} style={styles.helpLinkText}>
-          Learn more
-        </Text>
-      );
-
-      return (
-        <Text style={styles.developmentModeText}>
-          Development mode is enabled {learnMoreButton}
-        </Text>
-
-
-      );
-    }
-
-    _maybeRenderDevelopmentModeWarning() {
-        if (__DEV__) {
-            const learnMoreButton = (
-                <Text
-                    onPress={this._handleLearnMorePress}
-                    style={styles.helpLinkText}
-                >
-                    Learn more
-                </Text>
-            );
-
-            return (
-                <Text style={styles.developmentModeText}>
-                    Development mode is enabled {learnMoreButton}
-                </Text>
-            );
-        }
-    }
-
-    _handleLearnMorePress = () => {
-        WebBrowser.openBrowserAsync(
-            'https://docs.expo.io/versions/latest/guides/development-mode'
-        );
-    };
-
-    _handleHelpPress = () => {
-        WebBrowser.openBrowserAsync(
-            'https://docs.expo.io/versions/latest/guides/up-and-running.html#can-t-see-your-changes'
-        );
-    };
 }
+//this.callFun does nothing. its just copied code from a site
 
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+
     },
     mapSection: {
         flex: 1,
         flexDirection: 'row',
-        margin: 1
+        flexWrap: 'wrap'
     },
     storeIcon: {
         margin: 3
     },
+    imagebutton:{
+      borderRadius: 3,
+    },
 
     storeSection: {
-        width: 80,
+        width: 130,
         height: 100,
-        backgroundColor: '#D4D4D4',
-        margin: 10,
-        borderRadius: 5
+        backgroundColor: '#13632B',
+        margin: 23,
+        borderRadius: 5,
+        color: '#AED66E',
+        fontSize: 20,
     },
     developmentModeText: {
         marginBottom: 20,
