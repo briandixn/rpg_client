@@ -35,32 +35,39 @@ export default class HomeScreen extends React.Component {
         
           <View style={styles.mapSection}>
 
-          <Text style={styles.storeSection}>
-          <Image style={styles.storeIcon}source={require('../assets/images/sword.png')}/>
-          weapons shopp
-          </Text>
-
           <TouchableOpacity activeOpacity = { .5 } onPress={ this.callFun }>
 
-          <Image source={require('../assets/images/p_button.png')}>
-
-          </Image>
-          <Text>Recruit heros</Text>
+        <Image source={require('../assets/images/weapons-shop-1.png')}>
+        </Image>
+        <Text>weapons shop</Text>
 
         </TouchableOpacity>
 
-          <Text style={styles.storeSection}>
-          Buy items
-          </Text>
+          <TouchableOpacity activeOpacity = { .5 } onPress={ this.callFun }>
 
-          <Text style={styles.storeSection}>
-          Organize Heros
-          </Text>
+          <Image source={require('../assets/images/recruit-heros-1.png')}>
+          </Image>
+          <Text>Recruit new heros</Text>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity activeOpacity = { .5 } onPress={ this.callFun }>
+
+        <Image source={require('../assets/images/Items-shop-1.png')}>
+        </Image>
+        <Text>items shop</Text>
+
+        </TouchableOpacity>
+
+        <TouchableOpacity activeOpacity = { .5 } onPress={ this.callFun }>
+
+        <Image source={require('../assets/images/organize-heros-1.png')}>
+        </Image>
+        <Text>organize heros</Text>
+
+        </TouchableOpacity>
           </View>
 
-
-         
-          
         </ScrollView>
         
       </View>
