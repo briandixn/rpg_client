@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   Button,
+  ImageBackground,
 } from 'react-native';
 import { WebBrowser } from 'expo';
 
@@ -26,15 +27,17 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
+        <ImageBackground source={require('../assets/images/test_background.png')} 
+        style={{width: '100%', height: '100%'}}>
       <View style={styles.container}>
+      
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-
-
+        
           <View style={styles.mapSection}>
 
           <Text style={styles.storeSection}>
           <Image style={styles.storeIcon}source={require('../assets/images/sword.png')}/>
-          weapons shop
+          weapons shopp
           </Text>
 
           <TouchableOpacity activeOpacity = { .5 } onPress={ this.callFun }>
@@ -56,10 +59,12 @@ export default class HomeScreen extends React.Component {
           </View>
 
 
-
-
+         
+          
         </ScrollView>
+        
       </View>
+      </ImageBackground>
     );
   }
 }
@@ -68,7 +73,7 @@ export default class HomeScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
+        backgroundColor: 'transparent',
 
     },
     mapSection: {
@@ -129,12 +134,7 @@ const styles = StyleSheet.create({
         borderRadius: 3,
         paddingHorizontal: 4
     },
-    getStartedText: {
-        fontSize: 17,
-        color: 'rgba(96,100,109, 1)',
-        lineHeight: 24,
-        textAlign: 'center'
-    },
+    
     tabBarInfoContainer: {
         position: 'absolute',
         bottom: 0,
