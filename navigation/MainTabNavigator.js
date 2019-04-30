@@ -8,6 +8,8 @@ import {
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import DungeonScreen from '../screens/DungeonScreen';
+import Battlescreen from '../screens/BattleScreen';
+
 
 const HomeStack = createStackNavigator({
     Home: HomeScreen
@@ -26,6 +28,10 @@ HomeStack.navigationOptions = {
         />
     )
 };
+const BattleStack = createStackNavigator({
+    Battle: Battlescreen
+});
+
 
 const DungeonStack = createStackNavigator({
     Dungeons: DungeonScreen
@@ -40,5 +46,7 @@ DungeonStack.navigationOptions = {
 
 export default createBottomTabNavigator({
 	HomeStack,
-	DungeonStack
+    DungeonStack,
+    BattleStack
 });
+

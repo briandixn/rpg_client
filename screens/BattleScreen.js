@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
+ import { ScrollView, TouchableOpacity, StyleSheet, Image, Text } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import { Battlesprite } from '../components/battleSprite';
 
@@ -14,7 +14,13 @@ export default class Battlescreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
+        <TouchableOpacity style={styles.enemyIcon} activeOpacity = { .5 } onPress={ this.callFun }>
 
+        <Image source={require('../assets/images/pikachu.gif')}>
+        </Image>
+        <Text style={styles.storeText}>weapons shop</Text>
+
+        </TouchableOpacity>
 
       </ScrollView>
     );
@@ -32,4 +38,12 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: '#fff',
   },
+  storeText:{
+    color: 'white',
+    fontWeight: 'bold',
+},
+enemyIcon:{
+  alignItems: 'center',
+  justifyContent: 'center'
+}
 });
