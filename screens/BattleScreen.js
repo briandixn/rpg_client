@@ -1,15 +1,23 @@
 import React from 'react';
- import { ScrollView, TouchableOpacity, StyleSheet, Image, Text } from 'react-native';
+ import { ScrollView, TouchableOpacity, StyleSheet, Image, Text, Button } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import { Battlesprite } from '../components/battleSprite';
 
 
 export default class Battlescreen extends React.Component {
 
+  constructor(props) {
+    super(props);
 
+    this.handlePress = this.handlePress.bind(this);
+}
 ////battlesprite is not working at this time. will solve later for now we can use
 ///pikachu.gif and sword as placeholder
 
+handlePress() {
+  alert('Button pressed');
+
+}
 
   render() {
     return (
@@ -21,7 +29,7 @@ export default class Battlescreen extends React.Component {
         <Text style={styles.storeText}>weapons shop</Text>
 
         </TouchableOpacity>
-
+        <Button title="attack" onPress={this.handlePress} />
       </ScrollView>
     );
   }
